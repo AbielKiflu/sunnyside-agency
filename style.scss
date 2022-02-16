@@ -1,0 +1,142 @@
+@import "variables";
+
+* {
+    box-sizing: border-box;
+    
+}
+
+html{
+    background-color: #ccc;
+    position: relative;
+    
+    width:$width_mobile;
+    margin: auto;
+}
+
+
+//header
+header {
+    background-image: url("/images/desktop/image-header.jpg");// consider this while doing the responsive design
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    top: 35px;
+    width:$width_mobile;
+    height:208px;
+    
+    
+    .header__title{
+        color:$clr_white;
+        width:$width_mobile;
+        text-align: center;
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// navigation
+
+.navbar{
+     
+    position:absolute;
+    top: 0px;
+    padding: 15px;   //! why the padding of the nav isnt working properly
+    display:flex;
+    justify-content:space-between;
+    width: $width_mobile;
+    background-color:$clr_header;
+    
+    
+
+    
+        .navbar__logo{
+            align-self: center;
+        } 
+    
+        .navbar__menu{
+           display:none; //! mobile design Checkout
+            list-style-type: none;
+            align-self: center;
+    
+        .navbar__menu__item{
+            color:$clr_white;
+            display: inline-block;
+            margin-right:15px;
+             
+        }
+        
+    }
+
+    .navbar__hamburger{
+        //display:none;
+        width: 30px;
+        height:30px;
+        align-self: center;
+        background-image: url("/images/icons/icon-hamburger.svg");
+    }
+
+}
+
+
+// main content
+main{
+    position: relative;
+    top: 35px;
+    background-color: red;
+    width:$width_mobile;
+    height: 200px;
+}
+
+
+
+
+
+// footer
+
+.footer{
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    background-color:$clr_footer;
+    width:$width_mobile;
+    position: relative;
+    top: 35px;
+
+        .footer__logo{
+            color:$clr_darkgreen;
+        }
+
+        .footer__menu{ 
+            list-style-type: none;
+            display:flex;
+            justify-content: center;
+    
+                .footer__menu__item{
+                    display: inline-block;
+                    margin-right: 15px; //! this should be removeds refer flex box alignment
+                    
+        }
+        }
+
+        .footer__shares{
+            
+                .footer__shares__item{
+                    text-decoration: none;
+                    
+                }
+        
+        }
+}
+ 
