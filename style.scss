@@ -16,7 +16,7 @@ html{
 
 //header
 header {
-    background-image: url("/images/desktop/image-header.jpg");// consider this while doing the responsive design
+    background-image: url("./images/desktop/image-header.jpg");// consider this while doing the responsive design
     background-repeat: no-repeat;
     background-size: contain;
     position: relative;
@@ -82,7 +82,7 @@ header {
         width: 30px;
         height:30px;
         align-self: center;
-        background-image: url("/images/icons/icon-hamburger.svg");
+        background-image: url("./images/icons/icon-hamburger.svg");
     }
 
 }
