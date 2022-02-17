@@ -37,6 +37,7 @@ header {
             display: block;
             animation-name: updown-arrow;
             animation-duration: 1s;
+            animation-iteration-count: 3;
             animation-fill-mode: forwards;
         }
     }
@@ -46,8 +47,10 @@ header {
 @keyframes updown-arrow{
      from{
         transform: translateY(0px);
+        opacity: 0;
      }to{
-        transform: translateY(65px);
+         opacity: 1;
+        transform: translateY(60px);
      }
 }
 
@@ -99,9 +102,7 @@ header {
         background-size: cover;
         color:$clr_darkgreen;
 
-        &:hover {
-
-        }
+         
     } 
 }
 
@@ -203,42 +204,51 @@ header {
     margin: 20px;
      
     .main__tsmnl__title{
-        margin: 20px;
+        margin: 20px 0px;
         color:rgb(149, 153, 153);
         font-family: 'Fraunces', serif;
-        font-size: 0.9rem;
-        letter-spacing:  0.1em;
+        font-size: 0.94rem;
+        letter-spacing:  0.17em;
     }
 
     .main__tsmnl__person{
-        margin: 20px;
+        margin: 20px 0px;
         display:flex;
         flex-direction: column;
         align-items: center;
 
+
         .main__tsmnl__person__img{
-            margin: 20px;
+            margin: 30px 0px;
             border-radius:50%;
             width:75px;
+            height:75px;
             
         }
         .main__tsmnl__person__def{
-            margin: 20px;
+            margin: 20px 0px;
             color:rgb(114, 117, 117);
             text-align: center;
             font-family: 'Barlow', serif;
-            font-size: 0.8rem;
+            font-size: 0.9rem;  
+            line-height: 1.7rem;
              
         }
         .main__tsmnl__person__name{
+            margin-top: 18px;
             color:rgb(5, 5, 5);
             font-family: 'Fraunces', serif;
-            font-size: 0.9rem;
+            font-size: 1.04rem;
+            line-height: 1rem;
+            
         }
         .main__tsmnl__person__pro{
+            margin: 5px 0px;
             color:rgb(140, 143, 143);
             font-family: 'Barlow', serif;
-            font-size: 0.6rem;
+            font-size: 0.8rem;
+            line-height: 1.9rem;
+            
         }
          
     }
