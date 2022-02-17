@@ -1,12 +1,32 @@
-$clr_header:#3DBEFF;
-$clr_darkgreen:#077B67; 
-$clr_footer:#90D4C5;
-$clr_white:#fff;
-
 $width_mobile:375px;
 $width_desktop:1440px;
+$height_mobile:540px;
+
+$clr_header:hsl(200,100,62);
+$clr_darkgreen:#077B67; 
+$clr_footer:hsl(167,44,70);
+
+
+//Soft red: 
+$soft_red:hsl(7, 99%, 70%);
+//Yellow
+$yellow: hsl(51, 100%, 49%);
+//Dark desaturated cyan (graphic design text)
+$dark_desaturated_cyan: hsl(167, 40%, 24%);
+//Dark blue (photography text):
+ $dark_blue:hsl(198, 62%, 26%);
+//Dark moderate cyan (footer)
+$cyan_moderate: hsl(168, 34%, 41%);
 
 
 
 
-
+//Very dark desaturated blue: 
+$dark_desaturated_blue:hsl(212, 27%, 19%);
+//Very dark grayish blue: 
+$clr_grayish_darkblue:hsl(213, 9%, 39%);
+//Dark grayish blue: 
+$clr_grayish_blue:hsl(232, 10%, 55%);
+//Grayish blue: hsl(210, 4%, 67%)
+//White: 
+$clr_white:hsl(0, 0%, 100%)
