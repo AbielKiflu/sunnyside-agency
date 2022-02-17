@@ -21,9 +21,8 @@ header {
     background-size: cover;
     height:$height_mobile;
     padding: 20px;
-    
-     
-    
+    position: relative;
+
     .header__title{
         position: relative;
         top:80px;
@@ -40,9 +39,7 @@ header {
             animation-duration: 1s;
             animation-fill-mode: forwards;
         }
-
     }
-
 }
 
 
@@ -71,9 +68,7 @@ header {
     display:flex;
     justify-content:space-between;
     background-color:$clr_header;
-    
-    
-
+     
     
         .navbar__logo{
                 align-self: center;
@@ -93,8 +88,7 @@ header {
             display: inline-block;
             margin-right:15px;
              
-        }
-        
+        }  
     }
 
     .navbar__hamburger{
@@ -104,8 +98,42 @@ header {
         background-image: url("../images/icons/icon-hamburger.svg");
         background-size: cover;
         color:$clr_darkgreen;
+
+        &:hover {
+
+        }
     } 
- 
+}
+
+
+.navbar__popup{
+    display:none;
+    position:absolute;
+    transform:scale(0);
+    top: 80px;
+    right: 0px;
+    width: 87%;
+    padding: 20px;
+    margin: 20px;
+    list-style: none;
+    text-align: center;
+    background-color: white;
+
+        .navbar__popup__item{
+            padding: 20px;
+             
+        }
+
+        &::before{
+            content:"";
+            display: block;
+            position: absolute;
+            top: -28px;
+            right: 0px;
+            border: 14px solid transparent;
+            border-right-color:white;
+            border-bottom-color:white;
+        }
 
 }
 
@@ -117,25 +145,45 @@ header {
 .main__service{
     display: flex;
     flex-direction: column;
-   
-    height: 1080px;
+    height: 1200px;
  
     
     .main__service_item1{
         background-image:url("../images/mobile/image-graphic-design.jpg");
         background-size: cover;
-        height:$height_mobile;
-        padding: 20px;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        
     }
 
     .main__service__item2{
         background:url("../images/mobile/image-photography.jpg");
         background-size: cover;
-        height:$height_mobile;
-        padding: 20px;
-       
+        height: 600px;;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+         
     }
 
+    .main__service_item__title{
+        font-family: 'Fraunces', serif;
+        font-size: 1.7rem;
+        text-align:center;
+        margin-bottom: 30px;
+        
+    }
+
+    .main__service_item__def{
+        text-align:center;
+        margin-bottom: 70px;
+        font-family: 'Barlow', serif;
+        font-size: 0.9rem;
+    }
    
 
 }
@@ -260,20 +308,28 @@ header {
     height:350px;
     justify-content:space-around;
     background-color:$clr_footer;
-     
 
+    .footer__logo{
+        filter:invert(33%) sepia(58%) saturate(1118%) hue-rotate(131deg) brightness(92%) contrast(94%);
+        width: 165px;
+    }
 
     .footer__menu{ 
-        display: flex;
-        flex-direction: row;
-        justify-content:space-around;
-    
+         
         .footer__menu__item{
-            display:block;
+            margin: 20px;
             color:$clr_darkgreen;
             text-decoration: none;
         }
       
+    }
+
+    .footer__shares{
+        
+        .footer__shares__item{
+           padding: 10px;
+            
+        }
     }
 
 }
