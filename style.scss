@@ -4,6 +4,9 @@
     box-sizing: border-box; 
     padding: 0px;
     margin: 0px;
+    animation-name: fade-in-out;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
 
 html{
@@ -54,6 +57,32 @@ header {
      }
 }
 
+
+@keyframes fade-in-out{
+    0%{
+       opacity: 0;
+       transform: scale(0);
+    }
+    20%{
+        opacity: 0.2;
+     }
+     40%{
+        opacity: 0.4;
+     }
+     50%{
+        opacity: 0.6;
+     }
+     80%{
+        opacity: 0.8;
+  
+     }
+     90%{
+        opacity: 0.9;
+     }
+     100%{
+        opacity: 1;
+     }
+}
 
 
 
