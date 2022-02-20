@@ -5,32 +5,22 @@
 
 *{
     box-sizing: border-box; 
-    padding: 0px;
-    margin: 0px;
+    padding: 0rem;
+    margin: 0rem;
   //! turn on animation  animation-name: fade-in-out;
     animation-duration: 2s;
     animation-fill-mode: forwards;
+    }
 
-   
-
-}
-
-html{
-    width:$width_mobile;
-    margin: 0px auto;
-}
-
-  
-
+ 
 
 //header
 header {
-    background-image: url("../images/mobile/image-header.jpg");// consider this while doing the responsive design
-    background-size: cover;
+    background: url("../images/desktop/image-header.jpg") no-repeat center/cover; //consider this while doing the responsive design
     height:100vh;
-    padding: 20px;
+    padding: 1.4rem;
     position: relative;
-    
+    z-index: 0;
     .header__title{
         position: relative;
         top:5rem;
@@ -48,61 +38,9 @@ header {
             animation-duration: 2s;
             animation-delay: 2s;
             animation-fill-mode: forwards;
+            }
         }
     }
-}
-
-// animate the arrow in the header
-@keyframes updown-arrow{
-     from{
-        transform: translateY(0px);
-        opacity: 0;
-     }to{
-         opacity: 1;
-        transform: translateY(60px);
-     }
-}
-
-
- 
-
-
-// animate the page on refresh
-@keyframes fade-in-out{
-    0%{
-       opacity: 0;
-       transform: scale(0);
-    }
-    20%{
-        opacity: 0.2;
-     }
-     40%{
-        opacity: 0.4;
-     }
-     50%{
-        opacity: 0.6;
-     }
-     80%{
-        opacity: 0.8;
-  
-     }
-     90%{
-        opacity: 0.9;
-     }
-     100%{
-        opacity: 1;
-     }
-}
-
-
-
-
-
-
-
-
-
-
 
 // navigation
 
@@ -110,79 +48,70 @@ header {
     display:flex;
     justify-content:space-between;
     background-color:$clr_header;
-    z-index: 1;
-    
+
         .navbar__logo{
                 align-self: center;
                 display:block; 
             .navbar__logo_svg{
                 fill:$dark_cyan;
+                } 
             } 
+    
+
+
+.navbar__menu{
+    display: none;
+    list-style: none;
+    position:absolute;
+    top: 5rem;
+    right: 3rem;
+    z-index: 1;
+  
+    background-color:$clr_white;
+        .navbar__menu__item {
+            padding:2em;              
+            a{  
+                text-align: center;
+                text-decoration: none;
+                color:$clr_dark;
+                padding:1em;
+                &:hover{
+                    background-color:$clr_yellow;
+                    color:$clr_dark;
+                    border-radius: 2em;
+                    text-transform:uppercase;
+                    font-weight:bold;
+                    }
+                }
+            } 
+            &::before{
+                content:"";
+                position:absolute;
+                top: -2rem;
+                right: -0rem;
+                border: 1rem solid transparent;
+                border-right-color:$clr_white;
+                border-bottom-color:$clr_white;
+                 
+            } 
+        }
+
+
+        
+    .navbar__hamburger{
+        align-self: center;
+        appearance: none;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-image: url("../images/icons/icon-hamburger.svg");
+        &:checked ~ ul {
+            display: block;
+        }
+              
         } 
-    
-        .navbar__menu{
-            display:none; //! mobile design Checkout
-            list-style-type: none;
-            align-self: center;
-    
-        .navbar__menu__item{
-            color:$clr_white;
-            display: inline-block;
-            margin-right:15px;
-             
-        }  
     }
 
-    .navbar__hamburger{
-        //display:none;
-        width: 20px;
-        height:20px;
-        background-image: url("../images/icons/icon-hamburger.svg");
-        background-size: cover;
-        color:$dark_cyan;
-             
-    } 
-}
-
-
-.navbar__popup{
-    // !important !!!!
-    position:absolute;
-    top: 80px;
-    right: 0px;
-    width: 87%;
-    padding: 20px;
-    margin: 20px;
-    list-style: none;
-    text-align: center;
-    background-color: black;
-    display:none;
-
-        .navbar__popup__item{
-            text-align:center;
-            padding: 20px;
-            margin: 40px,0px;
-            width:80px;
-            &:hover{
-                border: radius 10px;
-                background-color:$yellow;
-            }
-            
-        }
-
-        &::before{
-            content:"";
-            display: block;
-            position: absolute;
-            top: -28px;
-            right: 0px;
-            border: 14px solid transparent;
-            border-right-color:white;
-            border-bottom-color:white;
-        }
-
-}
-
+  
 
 // main content
  
@@ -191,9 +120,7 @@ header {
 .main__service{
     display: flex;
     flex-direction: column;
-     
- 
-    
+      
     .main__service_item1{
         background-image:url("../images/mobile/image-graphic-design.jpg");
         background-size: cover;
@@ -202,24 +129,25 @@ header {
         flex-direction: column;
         align-items: center;
         justify-content: flex-end;
-        .main__service_item__title{
-            font-family: 'Fraunces', serif;
-            font-size: 1.8rem;
-            text-align:center;
-            margin-bottom: 0.5rem;
-            color:$dark_cyan;
+    
+    .main__service_item__title{
+        font-family: 'Fraunces', serif;
+        font-size: 1.8rem;
+        text-align:center;
+        margin-bottom: 0.5rem;
+        color:$dark_cyan;
         }
 
-        .main__service_item__def{
-            text-align:center;
-            margin-bottom: 2rem;
-            font-family: 'Barlow', serif;
-            font-size: 1rem;
-            line-height:1.5rem;
-            color:$dark_cyan;
-            padding: 1.2rem;
+    .main__service_item__def{
+        text-align:center;
+        margin-bottom: 2rem;
+        font-family: 'Barlow', serif;
+        font-size: 1rem;
+        line-height:1.5rem;
+        color:$dark_cyan;
+        padding: 1.2rem;
         }
-        }
+    }
 
     .main__service__item2{
         background:url("../images/mobile/image-photography.jpg");
@@ -235,7 +163,7 @@ header {
                 text-align:center;
                 margin-bottom: 0.5rem;
                 color:$dark_blue;
-            }
+                }
     
             .main__service_item__def{
                 text-align:center;
@@ -245,11 +173,9 @@ header {
                 line-height:1.5rem;
                 color:$dark_blue;
                 padding: 1.2rem;
-            }
+                }
+        }
     }
- 
-
-}
 
 
 
@@ -262,62 +188,67 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content:space-around;
-    padding: 20px;
-    margin: 20px;
-     
+    padding: 1.37rem;
+    margin: 1.37rem;
+
+
     .main__tsmnl__title{
-        margin: 20px 0px;
+        margin: 1.37rem 0rem;
         color:$clr_grayish_blue;
         font-family: 'Fraunces', serif;
         font-size: 0.94rem;
         letter-spacing:  0.17em;
-    }
-
-    .main__tsmnl__person{
-        margin: 20px 0px;
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-
-
-        .main__tsmnl__person__img{
-            margin: 30px 0px;
-            border-radius:50%;
-            width:75px;
-            height:75px;
-            
         }
+
+    .main__tsmnl__people{
+        
+        .main__tsmnl__person{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content:space-around;
+
+    
+        .main__tsmnl__person__img{
+            margin:3rem 0rem;
+            border-radius:50%;
+            width:5rem;
+            height:5rem;    
+            }
+
         .main__tsmnl__person__def{
-            margin: 20px 0px;
+            margin: 1.37rem 0rem;
             color:$clr_grayish_darkblue;
             text-align: center;
             font-family: 'Barlow', serif;
             font-size: 0.9rem;  
-            line-height: 1.7rem;
-             
-        }
+            line-height: 1.7rem;     
+            }
+
         .main__tsmnl__person__name{
-            margin-top: 18px;
+            margin-top: 1rem;
             color:rgb(5, 5, 5);
             font-family: 'Fraunces', serif;
             font-size: 1.04rem;
             line-height: 1rem;
-            
-        }
+            }
+
         .main__tsmnl__person__pro{
-            margin: 5px 0px;
             color:$clr_grayish_blue;
             font-family: 'Barlow', serif;
             font-size: 0.78rem;
             line-height: 1.9rem;
-            
+                
+            }
+             
         }
-         
+
     }
+        
 
-}
-
-
+     
+    } 
+ 
 
 
 
@@ -327,47 +258,40 @@ header {
 
 .main__gallery{
     display:grid;
-    grid-template-columns:1f 1f;
-    grid-template-rows:1f 1f;
-     
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap:0;
     
-
     .main__gallery__item1{
-        width: 187.5px;
-        object-fit: cover;
-        grid-column:1/2;
-        grid-row: 1/2;
-        content: url("../images/mobile/image-gallery-milkbottles.jpg")
-    }
+        content:url("../images/mobile/image-gallery-sugar-cubes.jpg");
+        width:100%;
+        height:100%;
+        background-size: cover;
+        }
     
     .main__gallery__item2{
-        width: 187.5px;
-        grid-column:2/3;
-        grid-row: 1/2;
-        content: url("../images/mobile/image-gallery-orange.jpg")
-    }
+        content:url("../images/mobile/image-gallery-orange.jpg");
+        width:100%;
+        height:100%;
+        background-size: cover;
+        }
     
     .main__gallery__item3{
-        width: 187.5px;
-        grid-column:1/2;
-        grid-row: 2/3;
-        content: url("../images/mobile/image-gallery-cone.jpg")
-    }
+        content:url("../images/mobile/image-gallery-cone.jpg");
+        width:100%;
+        height:100%;
+        background-size: cover;
+        }
     
     .main__gallery__item4{
-        width: 187.5px;
-        grid-column:2/3;
-        grid-row: 2/3;
-        content: url("../images/mobile/image-gallery-sugar-cubes.jpg")
+        content:url("../images/mobile/image-gallery-milkbottles.jpg");
+        width:100%;
+        height:100%;
+        background-size: cover;
+        }
     }
 
-
-}
-
-
-
-
-
+ 
 
 
 
@@ -376,14 +300,14 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 360px;
+    height: 22.5rem;
     justify-content:space-around;
     background-color:$clr_footer;
     
     .footer__logo{
         filter:invert(33%) sepia(58%) saturate(1118%) hue-rotate(131deg) brightness(92%) contrast(94%);
-         width:10rem;
-    }
+        width:10rem;
+        }
 
     .footer__menu{ 
          
@@ -394,19 +318,155 @@ header {
             color:$cyan_moderate;
             font-weight: bold;
             text-decoration: none;
-        }
+            }
       
-    }
+        }
 
     .footer__shares{
         
         .footer__shares__item{
            padding-right: 1.5rem;
             
+            }
         }
+
     }
 
+
+ @media screen and (min-width:23.45rem){
+ 
+
+    .navbar{
+        .navbar__menu{
+            display: inline;
+            position:static;
+            list-style: none;
+            align-self: center;
+            background-color:transparent;
+            .navbar__menu__item {
+                display: inline;
+                padding:1em;   
+                    a{
+                        text-decoration: none;
+                        color:$clr_white;
+                        padding:1em;
+                            &:hover{
+                                background-color:$clr_white;
+                                color:$clr_dark;
+                                border-radius: 2em;
+                                text-transform:uppercase;
+                                font-weight:bold;
+                            }
+                    }
+             
+                }  
+                &::before{
+                    display: none;
+                }
+            }
+            
+        .navbar__hamburger{
+            display: none;
+            }
+    }
+
+
+
+    .main__tsmnl{
+        
+        .main__tsmnl__people{
+            display:flex;
+            flex-direction:row;
+            }
+        }
+
+    .main__gallery{
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(1,1fr);
+        .main__gallery__item1{
+            content:url("../images/desktop/image-gallery-sugarcubes.jpg");
+            }
+        
+        .main__gallery__item2{
+            content:url("../images/desktop/image-gallery-orange.jpg");
+            }
+        
+        .main__gallery__item3{
+            content:url("../images/desktop/image-gallery-cone.jpg");
+            }
+        
+        .main__gallery__item4{
+            content:url("../images/desktop/image-gallery-milkbottles.jpg");
+            }
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// animate the arrow in the header
+@keyframes updown-arrow{
+    from{
+       transform: translateY(0rem);
+       opacity: 0;
+    }to{
+        opacity: 1;
+       transform: translateY(17rem);
+    }
 }
 
 
+
+
+
+// animate the page on refresh
+@keyframes fade-in-out{
+   0%{
+      opacity: 0;
+      transform: scale(0);
+   }
+   20%{
+       opacity: 0.2;
+    }
+    40%{
+       opacity: 0.4;
+    }
+    50%{
+       opacity: 0.6;
+    }
+    80%{
+       opacity: 0.8;
  
+    }
+    90%{
+       opacity: 0.9;
+    }
+    100%{
+       opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
